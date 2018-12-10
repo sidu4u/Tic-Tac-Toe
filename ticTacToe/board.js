@@ -1,8 +1,7 @@
 function Board()
 {
 	this.data =	 [["","",""],["","",""],["","",""]];
-	this.player1 = new Player("Player X","X");
-	this.player2 = new Player("Player O","O");
+	
 	
 	this.turn = 0;
 	this.gameWon = false;
@@ -34,5 +33,10 @@ function Board()
 		
 	}
 	
-	
+	Board.prototype.setPlayers = function(player1,player2)
+	{
+		this.player1 = player1;
+		this.player2 = player2;
+		
+	}	
 }

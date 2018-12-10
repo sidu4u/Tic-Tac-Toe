@@ -45,7 +45,7 @@ var utils = (function(){
 		checkDownDiagonal : function()
 		{
 			// check all the rows for win value
-				if(this.getMarker(0,0)===this.getMarker(1,1) && this.getMarker(1,1)===this.getMarker(2,2)&&this.this.getMarker(0,0)!=="")
+				if(this.getMarker(0,0)===this.getMarker(1,1) && this.getMarker(1,1)===this.getMarker(2,2)&&this.getMarker(0,0)!=="")
 				{
 					return true;
 				}
