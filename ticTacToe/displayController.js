@@ -43,30 +43,33 @@ var displayController = (function(){
 						cell.classList.add("cell","position");
 						cell.addEventListener("click",function onCellClick(){
 							if(!board.gameWon){
-							var currentPlayer = board.nextTurn();
-							cell.textContent = currentPlayer.marker;
-							board.setMarker(rowIndex,cellIndex,currentPlayer.marker);
-							cell.removeEventListener("click",onCellClick);
-							board.checkGameWon();
-							if(board.gameWon)
-							{
-								currentPlayer.score++;
-								updateScorefunc();
-								gameOver = `${currentPlayer.name} won the game`;
+								var currentPlayer = board.nextTurn();
+								cell.textContent = currentPlayer.marker;
+								board.setMarker(rowIndex,cellIndex,currentPlayer.marker);
+								cell.removeEventListener("click",onCellClick);
 								
-							}
-							if(board.turn>=9)
-							{
-								gameOver = "Tie Game";
-							}
-							}
+								board.checkGameWon();
+									if(board.gameWon)
+									{
+										currentPlayer.score++;
+										updateScorefunc();
+										gameOver = `${currentPlayer.name} won the game`;
+										
+									}
+									if(board.turn>=9)
+									{
+										gameOver = "Tie Game";
+									}
 							
-							if(gameOver)
-							{
-								var gameResult = document.createElement("div");
-								gameResult.classList.add("gameResult");
-								gameResult.textContent = gameOver;
-								boardDiv.appendChild(gameResult);
+							
+							
+								if(gameOver)
+								{
+									var gameResult = document.createElement("div");
+									gameResult.classList.add("gameResult");
+									gameResult.textContent = gameOver;
+									boardDiv.appendChild(gameResult);
+								}
 							}
 						});
 						

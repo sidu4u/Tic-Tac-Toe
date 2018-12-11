@@ -29,8 +29,9 @@ function Board()
 	
 	Board.prototype.checkGameWon = function()
 	{
-		this.gameWon =  utils.checkColumns.call(this)||utils.checkRows.call(this)||utils.checkDownDiagonal.call(this)||utils.checkUpDiagonal.call(this);
-		
+		if(!this.gameWon){
+			this.gameWon =  utils.checkColumns.call(this)||utils.checkRows.call(this)||utils.checkDownDiagonal.call(this)||utils.checkUpDiagonal.call(this);
+		}
 	}
 	
 	Board.prototype.setPlayers = function(player1,player2)
